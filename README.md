@@ -1,4 +1,4 @@
-# forecast_solar
+# Simple Forecast Solar HA entities
 
 ## Links
 * https://forecast.solar/
