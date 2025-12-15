@@ -1,6 +1,0 @@
-{
-  "domain": "forecast_solar",
-  "name": "Forecast Solar",
-  "version": "2025.12.1",
-  "integration_type": "entity"
-}

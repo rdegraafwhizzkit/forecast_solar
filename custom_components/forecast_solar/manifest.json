@@ -1,0 +1,14 @@
+{
+  "domain": "forecast_solar",
+  "name": "Forecast Solar",
+  "version": "2025.12.3-2.0.5-0",
+  "integration_type": "entity",
+  "documentation": "https://github.com/rdegraafwhizzkit/forecast_solar/blob/main/README.md",
+  "dependencies": [],
+  "codeowners": [
+    "@rdegraafwhizzkit"
+  ],
+  "requirements": [],
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/rdegraafwhizzkit/forecast_solar/issues"
+}

@@ -5,13 +5,27 @@
 
 ## Prerequisites
 * https://github.com/RomRider/apexcharts-card
+* Supported Python version, tested with 3.13.5
 
-## Installation
+## Develop
+```
+deactivate || :
+rm -rf .venv/
+python3 -m venv .venv
+. .venv/bin/activate
+pip install --upgrade pip pip-tools
+pip-compile dev_requirements.in
+pip install -r dev_requirements.txt
+```
 
-```
-cd to your config/custom_components directory
-copy contents of this repository
-```
+## Installation (manual)
+* Copy forecast_solar directory into your config/custom_components directory
+
+## Installation (HACS)
+* Install HACS in Home Assistant using instructions found at https://hacs.xyz/docs/use/
+* Add a custom _integration_ repository in HACS with url https://github.com/rdegraafwhizzkit/forecast_solar
+* Select this custom repository in HACS and click 'DOWNLOAD'
+* Add the File editor add on in Home Assistant. Using File editor, add the following entry in your `<config_dir>/configuration.yaml`:
 
 ## HA configuration in configuration.yaml
 ```
