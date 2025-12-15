@@ -21,9 +21,9 @@ sensor:
     latitude: 52.155172  # Set to your PV's gps location
     longitude: 5.387201  # Set to your PV's gps location
     declination: 10      # Set to the 'angle' of your panels. 0 = flat, 90 = straight up
-    azimuth: 0           # -180 = north, -90 = east, 0 = south, 90 = west, 180 = north
-    kilo_watt_peak: 11   # kWp of your PV's installation +/- # panels * 0.3
-    resources:
+    azimuth: 0           # Which way your panels are facing. -180 = north, -90 = east, 0 = south, 90 = west, 180 = north
+    kilo_watt_peak: 11   # kWp of your PV's installation, +/- # panels * 0.3
+    resources:           # Leave this for all entities, comment out what is not needed
       - watts
       - watt_hours_period
       - watt_hours
