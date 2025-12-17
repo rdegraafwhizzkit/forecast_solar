@@ -1,4 +1,4 @@
-# Simple Forecast Solar HA entities
+# Forecast Solar - Home Assistant entities
 
 ## Links
 * https://forecast.solar/
