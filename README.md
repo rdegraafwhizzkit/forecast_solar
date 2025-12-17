@@ -6,6 +6,8 @@
 ## Prerequisites
 * https://github.com/RomRider/apexcharts-card
 * Supported Python version, tested with 3.13.5
+* Recent (as of December 2025) Home Assistant, tested with 2025.12.2
+* Optional: HACS, tested with 2.0.5
 
 ## Develop
 ```
@@ -21,29 +23,30 @@ pip install -r dev_requirements.txt
 ## Installation (manual)
 * Copy forecast_solar directory into your config/custom_components directory
 
-## Installation (HACS)
+## Installation (using HACS)
 * Install HACS in Home Assistant using instructions found at https://hacs.xyz/docs/use/
 * Add a custom _integration_ repository in HACS with url https://github.com/rdegraafwhizzkit/forecast_solar
-* Select this custom repository in HACS and click 'DOWNLOAD'
-* Add the File editor add on in Home Assistant. Using File editor, add the following entry in your `<config_dir>/configuration.yaml`:
+* You may need to refresh your browser for the repository to show up in the 'New' section
+* Select the Forecast Solar custom repository in HACS and click 'DOWNLOAD'
+* Add the Config Editor add on in Home Assistant. Using that (or use vi), add the following entry in your `<config_dir>/configuration.yaml`:
 
 ## HA configuration in configuration.yaml
 ```
 sensor:
   - platform: forecast_solar
-#    api_key: dummy      # Set if you have it (untested)
+#    api_key: dummy      # Set it if you have it (untested functionality)
     latitude: 52.155172  # Set to your PV's gps location
     longitude: 5.387201  # Set to your PV's gps location
     declination: 10      # Set to the 'angle' of your panels. 0 = flat, 90 = straight up
     azimuth: 0           # Which way your panels are facing. -180 = north, -90 = east, 0 = south, 90 = west, 180 = north
     kilo_watt_peak: 11   # kWp of your PV's installation, +/- # panels * 0.3
-    resources:           # Leave this for all entities, comment out what is not needed
+    resources:           # Leave this for all entities, comment out what is not needed. I only use watt_hours_period
       - watts
       - watt_hours_period
       - watt_hours
       - watt_hours_day
 ```
-Reboot HA
+Reboot HA (very important)
 
 ## Example card configuration
 ```

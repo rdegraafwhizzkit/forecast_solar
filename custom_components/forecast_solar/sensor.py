@@ -6,11 +6,11 @@ configuration.yaml
 sensor:
   - platform: forecast_solar
 #    api_key: dummy
-    latitude: 52.336389266521266
-    longitude: 5.317898716089767
+    latitude: 52.155172
+    longitude: 5.387201
     declination: 10
     azimuth: 0  # -180 = north, -90 = east, 0 = south, 90 = west, 180 = north
-    kilo_watt_peak: 10
+    kilo_watt_peak: 11
     resources:
       - watts
       - watt_hours_period
@@ -30,9 +30,8 @@ import voluptuous as vol
 
 _LOGGER = logging.getLogger(__name__)
 
-BASE_URL_PUBLIC = 'https://api.forecast.solar/estimate/{latitude}/{longitude}/{declination}/{azimuth}/{kilo_watt_peak}'
-BASE_URL_PRIVATE = 'https://api.forecast.solar/{api_key}/estimate/{latitude}/{longitude}/{declination}/{azimuth}/{kilo_watt_peak}'
-
+BASE_URL_PUBLIC = 'https://api.forecast.solar/estimate/{lat}/{lon}/{dec}/{azi}/{kwp}'
+BASE_URL_PRIVATE = 'https://api.forecast.solar/{key}/estimate/{lat}/{lon}/{dec}/{azi}/{kwp}'
 MIN_TIME_BETWEEN_UPDATES = timedelta(hours=1)
 
 MDI_FLASH = 'mdi:flash'
@@ -70,12 +69,12 @@ class ForecastSolarAPI(object):
     def __init__(self, config):
         api_key = config[CONF_API_KEY]
         self._url = (BASE_URL_PRIVATE if api_key else BASE_URL_PUBLIC).format(**{
-            'latitude': config[CONF_LATITUDE],
-            'longitude': config[CONF_LONGITUDE],
-            'declination': config['declination'],
-            'azimuth': config['azimuth'],
-            'kilo_watt_peak': config['kilo_watt_peak'],
-            'api_key': api_key
+            'lat': config[CONF_LATITUDE],
+            'lon': config[CONF_LONGITUDE],
+            'dec': config['declination'],
+            'azi': config['azimuth'],
+            'kwp': config['kilo_watt_peak'],
+            'key': api_key
         })
 
         self.data = None
