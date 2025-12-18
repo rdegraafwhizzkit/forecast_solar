@@ -48,6 +48,12 @@ sensor:
 ```
 Reboot HA (very important)
 
+## Test Forecast Solar:
+```
+curl -H "Accept: application/json" https://api.forecast.solar/estimate/52.155172/5.387201/10/180/10
+```
+or browse to https://api.forecast.solar/estimate/52.155172/5.387201/10/180/10 for a result that is more readible.
+
 ## Example card configuration
 ```
 type: custom:apexcharts-card
