@@ -1,7 +1,7 @@
 # Forecast Solar - Home Assistant entities
 
 ## Links
-* https://forecast.solar/
+* https://forecast.solar/ (Buy Knut a coffee!)
 
 ## Prerequisites
 * https://github.com/RomRider/apexcharts-card
